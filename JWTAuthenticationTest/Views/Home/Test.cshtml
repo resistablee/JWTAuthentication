@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h1>Test</h1>
+
+<h2>test content</h2>
+
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        <h2>Authenticated</h2>
+        @foreach (var claim in User.Claims)
+        {
+            <p>@claim.Type: @claim.Value </p>
+        }
+    }
+    else
+    {
+        <h2>Not Authenticated</h2>
+    }
+}}
